@@ -23,28 +23,8 @@
                     <h5>Prix :</h5>
                     <p class="card-text"> {{piece.prix}} euros </p>
                 </div>
-                <div id="note" class="card-body">
-                    <h5>Note :</h5>
-                    <p class="card-text"> {{piece.note}}/10 </p>   
-                </div>
-                <div id="date" class="card-body">
-                    <h5>Date :</h5>
-                    <p class="card-text"> {{piece.date}} </p>  
-                </div>
             </div>    
         </div>
-    <div  class="d-flex flex-row justify-content-center" >
-        <div  id="galerie" class="card bg-light mb-3">
-            <div class="card-header" > <h4>Galerie</h4></div>
-            <div class="card-body">
-                <ng-container *ngFor="let p of piece.galerie">
-                    <a target="_blank" href="{{p}}">
-                        <img src="{{p}}" alt="{{piece.name}}" width="600" height="400">
-                      </a>    
-                    </ng-container>
-            </div>
-        </div>
-    </div>
 
     <div id="modifier">
 

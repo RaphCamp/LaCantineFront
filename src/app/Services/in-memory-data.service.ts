@@ -8,16 +8,16 @@ import { Plat } from '../plat';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const pieces: Plat[] = [
-      { id: 11, name: 'Luffy', desc: 'banpresto', photo: "../../assets/Akainu.jpg", prix: 50},
-      { id: 12, name: 'Zoro', desc: 'banpresto', photo: "../../assets/Akainu.jpg", prix: 10},
-      { id: 13, name: 'Nami', desc: 'banpresto', photo: "../../assets/Akainu.jpg", prix: 50},
-      { id: 14, name: 'Usopp', desc: 'banpresto', photo: "../../assets/Akainu.jpg", prix: 50},
-      { id: 15, name: 'Sanji', desc: 'banpresto', photo: "../../assets/Akainu.jpg", prix: 50},
-      { id: 16, name: 'Chopper', desc: 'banpresto', photo: "../../assets/Akainu.jpg", prix: 50},
-      { id: 17, name: 'Robin', desc: 'banpresto', photo: "../../assets/Akainu.jpg", prix: 50},
-      { id: 18, name: 'Franky', desc: 'banpresto', photo: "../../assets/Akainu.jpg", prix: 50},
-      { id: 19, name: 'Brook', desc: 'banpresto', photo: "../../assets/Akainu.jpg", prix: 50},
-      { id: 20, name: 'Jimbe', desc: 'banpresto', photo: "../../assets/Akainu.jpg", prix: 50},
+      { id: 11, name: 'Luffy', desc: 'banpresto', photo: "../../assets/rizotto.jpg", prix: 50},
+      { id: 12, name: 'Zoro', desc: 'banpresto', photo: "../../assets/rizotto.jpg", prix: 10},
+      { id: 13, name: 'Nami', desc: 'banpresto', photo: "../../assets/rizotto.jpg", prix: 50},
+      { id: 14, name: 'Usopp', desc: 'banpresto', photo: "../../assets/rizotto.jpg", prix: 50},
+      { id: 15, name: 'Sanji', desc: 'banpresto', photo: "../../assets/rizotto.jpg", prix: 50},
+      { id: 16, name: 'Chopper', desc: 'banpresto', photo: "../../assets/rizotto.jpg", prix: 50},
+      { id: 17, name: 'Robin', desc: 'banpresto', photo: "../../assets/rizotto.jpg", prix: 50},
+      { id: 18, name: 'Franky', desc: 'banpresto', photo: "../../assets/rizotto.jpg", prix: 50},
+      { id: 19, name: 'Brook', desc: 'banpresto', photo: "../../assets/rizotto.jpg", prix: 50},
+      { id: 20, name: 'Jimbe', desc: 'banpresto', photo: "../../assets/rizotto.jpg", prix: 50},
     ];
     return { pieces };
   }
