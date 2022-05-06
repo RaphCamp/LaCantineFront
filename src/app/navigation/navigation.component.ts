@@ -6,8 +6,8 @@ import {
   debounceTime, distinctUntilChanged, switchMap
 } from 'rxjs/operators';
 
-import { Plat } from '../plat';
-import { PieceService } from '../Services/piece.service';
+import { Plat } from '../models/plat';
+import { PlatService } from '../Services/plat.service';
 
 import { MenuComponent } from '../menu/menu.component';
 
@@ -19,7 +19,7 @@ import { MenuComponent } from '../menu/menu.component';
 export class NavigationComponent implements OnInit {
 
   constructor(
-    private pieceService: PieceService,
+    private pieceService: PlatService,
   ) { }
 
   ngOnInit(): void {

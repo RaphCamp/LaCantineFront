@@ -1,6 +1,6 @@
-import { Plat } from "./plat";
+import { Plat } from "./models/plat";
 
-export const PIECES: Plat[] = [
+export const PLATS: Plat[] = [
     { id: 11, name: 'Luffy', desc: 'banpresto',photo: "../../images/Akainu.jpg", prix: 50},
     { id: 12, name: 'Zoro', desc: 'banpresto',photo: "../../images/Akainu.jpg", prix: 50},
     { id: 13, name: 'Nami', desc: 'banpresto',photo: "../../images/Akainu.jpg", prix: 50},

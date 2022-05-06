@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Plat } from '../plat';
-import { PIECES } from '../mock-pieces';
-import { PieceService } from '../Services/piece.service';
+import { Plat } from '../models/plat';
+import { PLATS } from '../mock-plats';
+import { PlatService } from '../Services/plat.service';
 
 import { ActivatedRoute } from '@angular/router';
 import { from } from 'rxjs';
@@ -25,45 +25,45 @@ import { BehaviorSubject } from 'rxjs';
 export class MenuComponent implements OnInit {
 
   constructor(
-    private pieceService: PieceService,
+    private platService: PlatService,
     private route: ActivatedRoute,
 
   ) { }
 
 
   ngOnInit(): void {
-    this.pieceService.currentFilter.subscribe(message => this.messageChild = message);
-    this.getPieces();
+    this.platService.currentFilter.subscribe(message => this.messageChild = message);
+    this.getPlats();
 
   }
   messageChild!: string;
   //@Input()  messageChild! : string;
   //ngOnChanges(changes: SimpleChanges): void {
   //  console.log(changes);
-  //  this.getPieces();
+  //  this.getPlats();
 
   //}
 
-  pieces: Plat[] = [];
-  //pieces$!: Observable<Plat[]>;
+  plats: Plat[] = [];
+  //plats$!: Observable<Plat[]>;
   // private searchTerms = new Subject<string>();
 
-  getPieces(): void {
+  getPlats(): void {
     console.log('Tableau chargé' + this.messageChild);
 
-    this.pieceService.getPieces().subscribe(pieces => this.pieces = pieces);
-    //.filter(pieces => pieces.name.includes(this.message))
+    this.platService.getPlats().subscribe(plats => this.plats = plats);
+    //.filter(plats => plats.name.includes(this.message))
   }
 
-  filteredPieces(): Plat[] {
-    return this.pieces.filter(pieces => pieces.name.toLowerCase().includes(this.messageChild.toLowerCase()));
+  filteredPlats(): Plat[] {
+    return this.plats.filter(plats => plats.name.toLowerCase().includes(this.messageChild.toLowerCase()));
   }
 
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.pieceService.addPiece({ name } as Plat).subscribe(piece => {
-      this.pieces.push(piece);
+    this.platService.addPlat({ name } as Plat).subscribe(plat => {
+      this.plats.push(plat);
     });
   }
 

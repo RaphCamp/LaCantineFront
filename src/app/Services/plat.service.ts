@@ -3,8 +3,8 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 
-import { Plat } from '../plat';
-import { PIECES } from '../mock-pieces';
+import { Plat } from '../models/plat';
+import { PLATS } from '../mock-plats';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
@@ -14,8 +14,8 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PieceService {
-  //pieces : PIECES[] = [
+export class PlatService {
+  //plats : PLATS[] = [
 
   constructor(
     private messageService: MessageService,
@@ -24,21 +24,21 @@ export class PieceService {
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
-    this.messageService.add(`PieceService: ${message}`);
+    this.messageService.add(`PlatService: ${message}`);
   }
 
-  private piecesUrl = 'api/pieces';
+  private platsUrl = 'api/plats';
 
-  getPieces(): Observable<Plat[]> {
-    const pieces = this.http.get<Plat[]>(this.piecesUrl).pipe(tap(_ => this.log('fetched pieces')), catchError(this.handleError<Plat[]>('getPieces', []))
+  getPlats(): Observable<Plat[]> {
+    const plats = this.http.get<Plat[]>(this.platsUrl).pipe(tap(_ => this.log('fetched plats')), catchError(this.handleError<Plat[]>('getPlats', []))
     );
 
-    return pieces;
+    return plats;
   }
 
-  getPiece(id: number): Observable<Plat> {
-    const url = `${this.piecesUrl}/${id}`;
-    return this.http.get<Plat>(url).pipe(tap(_ => this.log(`fetched piece id=${id}`)), catchError(this.handleError<Plat>(`getPiece id=${id}`)));
+  getPlat(id: number): Observable<Plat> {
+    const url = `${this.platsUrl}/${id}`;
+    return this.http.get<Plat>(url).pipe(tap(_ => this.log(`fetched plat id=${id}`)), catchError(this.handleError<Plat>(`getPlat id=${id}`)));
   }
 
 
@@ -67,40 +67,40 @@ export class PieceService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  updatePiece(piece: Plat): Observable<any> {
-    return this.http.put(this.piecesUrl, piece, this.httpOptions).pipe(
-      tap(_ => this.log(`updated piece id=${piece.id}`)),
-      catchError(this.handleError<any>('updatePiece'))
+  updatePlat(plat: Plat): Observable<any> {
+    return this.http.put(this.platsUrl, plat, this.httpOptions).pipe(
+      tap(_ => this.log(`updated plat id=${plat.id}`)),
+      catchError(this.handleError<any>('updatePlat'))
     );
   }
 
-  addPiece(piece: Plat): Observable<any> {
-    return this.http.post<Plat>(this.piecesUrl, piece, this.httpOptions).pipe(
-      tap((newPiece: Plat) => this.log(`added pice w/ id=${newPiece.id}`)),
-      catchError(this.handleError<Plat>("addPiece"))
+  addPlat(plat: Plat): Observable<any> {
+    return this.http.post<Plat>(this.platsUrl, plat, this.httpOptions).pipe(
+      tap((newPlat: Plat) => this.log(`added pice w/ id=${newPlat.id}`)),
+      catchError(this.handleError<Plat>("addPlat"))
     );
   }
 
-  deletePiece(id: number): Observable<Plat> {
-    const url = `${this.piecesUrl}/${id}`;
+  deletePlat(id: number): Observable<Plat> {
+    const url = `${this.platsUrl}/${id}`;
 
     return this.http.delete<Plat>(url, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted piece id=${id}`)),
-      catchError(this.handleError<Plat>('deletePiece'))
+      tap(_ => this.log(`deleted plat id=${id}`)),
+      catchError(this.handleError<Plat>('deletePlat'))
     );
   }
 
   /* GET heroes whose name contains search term */
-  searchPieces(term: string): Observable<Plat[]> {
+  searchPlats(term: string): Observable<Plat[]> {
     if (!term.trim()) {
       // if not search term, return empty hero array.
       return of([]);
     }
-    return this.http.get<Plat[]>(`${this.piecesUrl}/?name=${term}`).pipe(
+    return this.http.get<Plat[]>(`${this.platsUrl}/?name=${term}`).pipe(
       tap(x => x.length ?
-        this.log(`found pieces matching "${term}"`) :
-        this.log(`no pieces matching "${term}"`)),
-      catchError(this.handleError<Plat[]>('searchPieces', []))
+        this.log(`found plats matching "${term}"`) :
+        this.log(`no plats matching "${term}"`)),
+      catchError(this.handleError<Plat[]>('searchPlats', []))
     );
   }
 

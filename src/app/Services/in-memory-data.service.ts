@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Plat } from '../plat';
+import { Plat } from '../models/plat';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const pieces: Plat[] = [
+    const plats: Plat[] = [
       { id: 11, name: 'Rizotto', desc: 'très bon très bon', photo: "../../assets/rizotto.jpg", prix: 16},
       { id: 12, name: 'Poulet Roti', desc: 'très bon très bon', photo: "../../assets/rizotto.jpg", prix: 18},
       { id: 13, name: 'Curry', desc: 'très bon très bon', photo: "../../assets/rizotto.jpg", prix: 13},
@@ -19,7 +19,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 19, name: 'Salade', desc: 'très bon très bon', photo: "../../assets/rizotto.jpg", prix: 12},
       { id: 20, name: 'Escargots qui crient', desc: 'très bon très bon', photo: "../../assets/rizotto.jpg", prix: 20},
     ];
-    return { pieces };
+    return { plats };
   }
 
   // Overrides the genId method to ensure that a hero always has an id.

@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Plat } from '../plat';
+import { Plat } from '../models/plat';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { PieceService } from '../Services/piece.service';
+import { PlatService } from '../Services/plat.service';
 
 
 
@@ -18,17 +18,17 @@ export class PlatComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private pieceService: PieceService,
+    private pieceService: PlatService,
     private location: Location
   ) { }
 
   ngOnInit(): void {
-    this.getPiece();
+    this.getPlat();
   }
 
-  getPiece(): void {
+  getPlat(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.pieceService.getPiece(id).subscribe(piece => this.piece = piece);
+    this.pieceService.getPlat(id).subscribe(piece => this.piece = piece);
   }
 
   goBack(): void {
@@ -37,12 +37,12 @@ export class PlatComponent implements OnInit {
 
   save(): void {
     if (this.piece) {
-      this.pieceService.updatePiece(this.piece).subscribe(() => this.goBack());
+      this.pieceService.updatePlat(this.piece).subscribe(() => this.goBack());
     }
   }
 
   delete(piece: Plat): void {
-    this.pieceService.deletePiece(piece.id).subscribe(() => this.goBack());
+    this.pieceService.deletePlat(piece.id).subscribe(() => this.goBack());
   }
 
 }

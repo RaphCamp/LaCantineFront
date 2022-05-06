@@ -1,21 +1,21 @@
 <div class="body">
   
-  <h2>Mes Pièces</h2>
+  <h2>Les Menus</h2>
 
 <p >{{messageChild}}</p>  
   <div class="d-flex flex-row justify-content-center flex-wrap">
-    <div *ngFor="let piece of filteredPieces() " class="p-2" >
+    <div *ngFor="let plat of filteredPlats() " class="p-2" >
         <div class="card bg-light mb-3" class="gallery" >
           <div class="card-header" >
-            <a routerLink="/plat/{{piece.id}}" ><h5>{{piece.id}} : {{piece.name | uppercase}}</h5></a>         
+            <a routerLink="/plat/{{plat.id}}" ><h5>{{plat.id}} : {{plat.name | uppercase}}</h5></a>         
           </div>
           <div class="d-block user-select-none">
-            <a target="_blank" href="{{piece.photo}}">
-              <img src="{{piece.photo}}" alt="{{piece.name}}" width="600" height="400">
+            <a target="_blank" href="{{plat.photo}}">
+              <img src="{{plat.photo}}" alt="{{plat.name}}" width="600" height="400">
             </a>
           </div>
           <div class="card-body">
-            <p class="card-text">{{piece.desc}}</p>
+            <p class="card-text">{{plat.desc}}</p>
           </div>
 
       </div>
@@ -24,11 +24,11 @@
   </div>
   
  <div>
-  <label for="new-piece">Nom du personnage: </label>
-  <input id="new-piece" #pieceName />
+  <label for="new-plat">Nom du personnage: </label>
+  <input id="new-plat" #platName />
 
   <!-- (click) passes input value to add() and then clears the input -->
-  <button type="button" class="add-button" (click)="add(pieceName.value); pieceName.value=''">
+  <button type="button" class="add-button" (click)="add(platName.value); platName.value=''">
     Ajouter
   </button>
  </div>
