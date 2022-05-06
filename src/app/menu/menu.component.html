@@ -1,8 +1,28 @@
 <div class="body">
-  
   <h2>Les Menus</h2>
+ 
+  <div class="d-flex flex-row justify-content-center flex-wrap">
+    <div *ngFor="let plat of filteredPlats() " class="p-2" >
+        <div class="card bg-light mb-3" class="gallery" >
+          <div class="card-header" >
+            <a routerLink="/plat/{{plat.id}}" ><h5>{{plat.id}} : {{plat.name | uppercase}}</h5></a>         
+          </div>
+          <div class="d-block user-select-none">
+            <a target="_blank" href="{{plat.photo}}">
+              <img src="{{plat.photo}}" alt="{{plat.name}}" width="600" height="400">
+            </a>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{plat.desc}}</p>
+          </div>
 
-<p >{{messageChild}}</p>  
+      </div>
+
+    </div>
+  </div>
+
+  <h2>Les Plats</h2>
+
   <div class="d-flex flex-row justify-content-center flex-wrap">
     <div *ngFor="let plat of filteredPlats() " class="p-2" >
         <div class="card bg-light mb-3" class="gallery" >
@@ -32,8 +52,6 @@
     Ajouter
   </button>
  </div>
-
-
 </div>
 
 
