@@ -23,18 +23,6 @@ export class NavigationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.pieceService.currentFilter.subscribe(message => this.messageParent = message);
   }
-
-  // Push a search term into the observable stream.
-  search(term: string): void {
-    this.pieceService.changeFilter(term);
-
-  }
-
-  messageParent!: string;
-
-
-
 
 }

@@ -1,21 +1,11 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Plat } from '../models/plat';
-import { PLATS } from '../mock-plats';
+import { Menu } from '../models/menu';
+
 import { PlatService } from '../Services/plat.service';
+import { MenuService } from '../Services/menu.service';
 
 import { ActivatedRoute } from '@angular/router';
-import { from } from 'rxjs';
-
-import { filter } from "rxjs/operators";
-import { interval, of, timer } from "rxjs";
-
-import { Observable, Subject } from 'rxjs';
-import {
-  debounceTime, distinctUntilChanged, switchMap
-} from 'rxjs/operators';
-
-import { BehaviorSubject } from 'rxjs';
-
 
 @Component({
   selector: 'menu',
@@ -25,41 +15,35 @@ import { BehaviorSubject } from 'rxjs';
 export class MenuComponent implements OnInit {
 
   constructor(
+    private menuService: MenuService,
     private platService: PlatService,
     private route: ActivatedRoute,
-
   ) { }
 
 
   ngOnInit(): void {
-    this.platService.currentFilter.subscribe(message => this.messageChild = message);
+    this.getMenus();
     this.getPlats();
-
   }
-  messageChild!: string;
-  //@Input()  messageChild! : string;
-  //ngOnChanges(changes: SimpleChanges): void {
-  //  console.log(changes);
-  //  this.getPlats();
-
-  //}
 
   plats: Plat[] = [];
-  //plats$!: Observable<Plat[]>;
-  // private searchTerms = new Subject<string>();
+  menus: Menu[] = [];
 
+  //methodes menu
+  getMenus(): void {
+    console.log('Tableau chargé');
+
+    this.menuService.getMenus().subscribe(menus => this.menus = menus);
+  }
+
+  //methodes plat
   getPlats(): void {
-    console.log('Tableau chargé' + this.messageChild);
+    console.log('Tableau chargé');
 
     this.platService.getPlats().subscribe(plats => this.plats = plats);
-    //.filter(plats => plats.name.includes(this.message))
   }
 
-  filteredPlats(): Plat[] {
-    return this.plats.filter(plats => plats.name.toLowerCase().includes(this.messageChild.toLowerCase()));
-  }
-
-  add(name: string): void {
+  addPlat(name: string): void {
     name = name.trim();
     if (!name) { return; }
     this.platService.addPlat({ name } as Plat).subscribe(plat => {

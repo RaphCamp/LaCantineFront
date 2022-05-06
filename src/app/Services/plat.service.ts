@@ -4,12 +4,10 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 
 import { Plat } from '../models/plat';
-import { PLATS } from '../mock-plats';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +20,7 @@ export class PlatService {
     private http: HttpClient
   ) { }
 
-  /** Log a HeroService message with the MessageService */
+  /** Log a PlatService message with the MessageService */
   private log(message: string) {
     this.messageService.add(`PlatService: ${message}`);
   }
@@ -89,28 +87,4 @@ export class PlatService {
       catchError(this.handleError<Plat>('deletePlat'))
     );
   }
-
-  /* GET heroes whose name contains search term */
-  searchPlats(term: string): Observable<Plat[]> {
-    if (!term.trim()) {
-      // if not search term, return empty hero array.
-      return of([]);
-    }
-    return this.http.get<Plat[]>(`${this.platsUrl}/?name=${term}`).pipe(
-      tap(x => x.length ?
-        this.log(`found plats matching "${term}"`) :
-        this.log(`no plats matching "${term}"`)),
-      catchError(this.handleError<Plat[]>('searchPlats', []))
-    );
-  }
-
-
-  private filter = new BehaviorSubject('');
-  currentFilter = this.filter.asObservable();
-
-  changeFilter(message: string) {
-    this.filter.next(message)
-  }
-
-
 }
