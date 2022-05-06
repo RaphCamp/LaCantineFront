@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
 import {
-   debounceTime, distinctUntilChanged, switchMap
- } from 'rxjs/operators';
+  debounceTime, distinctUntilChanged, switchMap
+} from 'rxjs/operators';
 
-import { Piece } from '../piece';
-import { PieceService } from '../piece.service';
+import { Plat } from '../plat';
+import { PieceService } from '../Services/piece.service';
 
-import { MuseeComponent } from '../musee/musee.component';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-navigation',
@@ -20,7 +20,7 @@ export class NavigationComponent implements OnInit {
 
   constructor(
     private pieceService: PieceService,
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.pieceService.currentFilter.subscribe(message => this.messageParent = message);
@@ -32,9 +32,9 @@ export class NavigationComponent implements OnInit {
 
   }
 
-  messageParent! : string;
+  messageParent!: string;
 
 
 
-  
+
 }
