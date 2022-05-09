@@ -3,9 +3,7 @@ import { Plat } from '../models/plat';
 import { Menu } from '../models/menu';
 
 import { PlatService } from '../Services/plat.service';
-import { CarteService } from '../Services/carte.service';
-
-import { ActivatedRoute } from '@angular/router';
+import { MenuService } from '../Services/menu.service';
 
 @Component({
   selector: 'carte',
@@ -15,9 +13,8 @@ import { ActivatedRoute } from '@angular/router';
 export class CarteComponent implements OnInit {
 
   constructor(
-    private menuService: CarteService,
+    private menuService: MenuService,
     private platService: PlatService,
-    private route: ActivatedRoute,
   ) { }
 
 
@@ -29,7 +26,7 @@ export class CarteComponent implements OnInit {
   plats: Plat[] = [];
   menus: Menu[] = [];
 
-  //methodes carte
+  //methodes menu
   getMenus(): void {
     console.log('Tableau chargé');
 

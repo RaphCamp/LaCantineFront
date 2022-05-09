@@ -7,10 +7,9 @@ import { IdentificationComponent } from './identification/identification.compone
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/menu', pathMatch: 'full' },
+  { path: '', redirectTo: '/carte', pathMatch: 'full' },
   { path: 'plat/:id', component: PlatComponent },
-  { path: 'menu/:search', component: CarteComponent },
-  { path: 'menu', component: CarteComponent },
+  { path: 'carte', component: CarteComponent },
   { path: 'identification', component: IdentificationComponent }
 ];
 
