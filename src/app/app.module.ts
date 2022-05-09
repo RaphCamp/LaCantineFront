@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { IdentificationComponent } from './identification/identification.component';
 import { PlatComponent } from './plat/plat.component';
-import { MenuComponent } from './menu/menu.component';
+import { CarteComponent } from './carte/carte.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MessagesComponent } from './messages/messages.component';
 
@@ -22,7 +22,7 @@ import { MessagesComponent } from './messages/messages.component';
     NavigationComponent,
     IdentificationComponent,
     PlatComponent,
-    MenuComponent,
+    CarteComponent,
     MessagesComponent
   ],
   imports: [

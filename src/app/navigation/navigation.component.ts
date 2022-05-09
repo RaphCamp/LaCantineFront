@@ -9,12 +9,12 @@ import {
 import { Plat } from '../models/plat';
 import { PlatService } from '../Services/plat.service';
 
-import { MenuComponent } from '../menu/menu.component';
+import { CarteComponent } from '../carte/carte.component';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ["../../../node_modules/bootswatch/dist/cyborg/bootstrap.css"]
+  styleUrls: ["../../../node_modules/bootswatch/dist/cyborg/bootstrap.css","./navigation.component.css"]
 })
 export class NavigationComponent implements OnInit {
 

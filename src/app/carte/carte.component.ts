@@ -3,19 +3,19 @@ import { Plat } from '../models/plat';
 import { Menu } from '../models/menu';
 
 import { PlatService } from '../Services/plat.service';
-import { MenuService } from '../Services/menu.service';
+import { CarteService } from '../Services/carte.service';
 
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css', '../../../node_modules/bootswatch/dist/Litera/bootstrap.css']
+  selector: 'carte',
+  templateUrl: './carte.component.html',
+  styleUrls: ['./carte.component.css','../../../node_modules/bootswatch/dist/Litera/bootstrap.css']
 })
-export class MenuComponent implements OnInit {
+export class CarteComponent implements OnInit {
 
   constructor(
-    private menuService: MenuService,
+    private menuService: CarteService,
     private platService: PlatService,
     private route: ActivatedRoute,
   ) { }
@@ -29,7 +29,7 @@ export class MenuComponent implements OnInit {
   plats: Plat[] = [];
   menus: Menu[] = [];
 
-  //methodes menu
+  //methodes carte
   getMenus(): void {
     console.log('Tableau chargé');
 

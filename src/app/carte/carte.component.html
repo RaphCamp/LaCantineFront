@@ -1,11 +1,11 @@
 <div class="body">
   <h2>Les Menus</h2>
  
-  <div class="d-flex flex-row justify-content-center flex-wrap">
+  <div  class="d-flex flex-row justify-content-center flex-wrap" >
     <div *ngFor="let menu of menus " class="p-2" >
         <div class="card bg-light mb-3" class="gallery" >
           <div class="card-header" >
-            <a routerLink="/plat/{{menu.id}}" ><h5>{{menu.name | uppercase}} </h5></a> <p>({{menu.prix}}€)</p>         
+            <a id="menuTitle" routerLink="/plat/{{menu.id}}" ><h5>{{menu.name | uppercase}} </h5></a> <p>({{menu.prix}}€)</p>         
           </div>
           <div class="card-body">
             <ul>
@@ -24,11 +24,11 @@
 
   <h2>Les Plats</h2>
 
-  <div class="d-flex flex-row justify-content-center flex-wrap">
+  <div class="boite" class="d-flex flex-row justify-content-center flex-wrap">
     <div *ngFor="let plat of plats " class="p-2" >
         <div class="card bg-light mb-3" class="gallery" >
           <div class="card-header" >
-            <a routerLink="/plat/{{plat.id}}" ><h5>{{plat.id}} : {{plat.name | uppercase}}</h5></a>         
+            <a id="platTitle" routerLink="/plat/{{plat.id}}" ><h5>{{plat.name | uppercase}}</h5></a>  <p>({{plat.prix}}€)</p>        
           </div>
           <div class="d-block user-select-none">
             <a target="_blank" href="{{plat.photo}}">
