@@ -12,8 +12,7 @@ import { catchError, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class CarteService {
-  //menus : PLATS[] = [
+export class MenuService {
 
   constructor(
     private messageService: MessageService,

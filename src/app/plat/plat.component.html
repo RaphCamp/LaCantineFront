@@ -1,27 +1,27 @@
 
-<div class="body" *ngIf="piece">
+<div class="body" *ngIf="plat">
   
-    <h1>{{piece.name | uppercase}}</h1>
+    <h1>{{plat.name | uppercase}}</h1>
     <div id="haut" class="d-flex flex-row justify-content-center" >
             <div id="photo" class="card bg-light mb-3">
                 <div class="card-header" > <h4>Photo</h4></div>
                 <div class="card-body">
-                    <a target="_blank" href="{{piece.photo}}">
-                        <img id="photoProfil" src="{{piece.photo}}" alt="{{piece.name}}" width="600" height="400" />
+                    <a target="_blank" href="{{plat.photo}}">
+                        <img id="photoProfil" src="{{plat.photo}}" alt="{{plat.name}}" width="600" height="400" />
                       </a>    
                 </div>
             </div>
             <div id="description" class="card text-white bg-dark mb-3"> 
                 <div class="card-header" > <h4>Description</h4></div>
                 <div class="card-body">
-                   <p class="card-text">{{piece.desc}}</p> 
+                   <p class="card-text">{{plat.desc}}</p> 
                 </div>
             </div>
             <div id="infos" class="card bg-light mb-3">
                 <div class="card-header" > <h4>Informations</h4></div>
                 <div id="prix" class="card-body">
                     <h5>Prix :</h5>
-                    <p class="card-text"> {{piece.prix}} euros </p>
+                    <p class="card-text"> {{plat.prix}} euros </p>
                 </div>
             </div>    
         </div>
@@ -29,7 +29,7 @@
     <div id="modifier">
 
       <label for="name">Nom du personnage: </label>
-      <input id="name" [(ngModel)]="piece.name" placeholder="name">
+      <input id="name" [(ngModel)]="plat.name" placeholder="name">
     </div>
     
     <br>
@@ -37,7 +37,7 @@
     <br>
 
     <div id="supprimer">
-        <button type="button" class="delete" title="delete piece" (click)="delete(piece)">Supprimer</button>
+        <button type="button" class="delete" title="delete plat" (click)="delete(plat)">Supprimer</button>
     </div>
 
 </div>

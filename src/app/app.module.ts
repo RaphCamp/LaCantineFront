@@ -14,6 +14,7 @@ import { PlatComponent } from './plat/plat.component';
 import { CarteComponent } from './carte/carte.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MessagesComponent } from './messages/messages.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MessagesComponent } from './messages/messages.component';
     IdentificationComponent,
     PlatComponent,
     CarteComponent,
-    MessagesComponent
+    MessagesComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

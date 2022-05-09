@@ -14,11 +14,11 @@ import { PlatService } from '../Services/plat.service';
 })
 export class PlatComponent implements OnInit {
 
-  @Input() piece?: Plat;
+  @Input() plat?: Plat;
 
   constructor(
     private route: ActivatedRoute,
-    private pieceService: PlatService,
+    private platService: PlatService,
     private location: Location
   ) { }
 
@@ -28,7 +28,7 @@ export class PlatComponent implements OnInit {
 
   getPlat(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.pieceService.getPlat(id).subscribe(piece => this.piece = piece);
+    this.platService.getPlat(id).subscribe(plat => this.plat = plat);
   }
 
   goBack(): void {
@@ -36,13 +36,13 @@ export class PlatComponent implements OnInit {
   }
 
   save(): void {
-    if (this.piece) {
-      this.pieceService.updatePlat(this.piece).subscribe(() => this.goBack());
+    if (this.plat) {
+      this.platService.updatePlat(this.plat).subscribe(() => this.goBack());
     }
   }
 
-  delete(piece: Plat): void {
-    this.pieceService.deletePlat(piece.id).subscribe(() => this.goBack());
+  delete(plat: Plat): void {
+    this.platService.deletePlat(plat.id).subscribe(() => this.goBack());
   }
 
 }
