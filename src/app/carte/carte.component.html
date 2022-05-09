@@ -11,7 +11,7 @@
             <ul>
               <div *ngFor="let platMenu of menu.plats ">
                 <li>
-                  <a routerLink="/plat/{{platMenu.id}}" > {{platMenu.name | uppercase}}</a>         
+                  <a id="platsDuMenu" routerLink="/plat/{{platMenu.id}}" ><p>{{platMenu.name | uppercase}}</p> </a>         
                 </li>
               </div>
             </ul>

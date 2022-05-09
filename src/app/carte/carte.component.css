@@ -36,9 +36,16 @@ div.gallery {
     text-decoration:none; 
     color:cadetblue;
   }
+  #menuTitle :hover {
+    font-size: x-large;
+  }
+
   #platTitle {
     text-decoration:none; 
     color:cadetblue;
+  }
+  #platTitle :hover {
+    font-size: x-large;
   }
 
   h2 {
@@ -48,4 +55,12 @@ div.gallery {
 
   .card-header {
     text-align: center;
+  }
+
+  #platsDuMenu {
+    text-decoration:none; 
+    color:cadetblue;
+  }
+  #platsDuMenu :hover {
+    font-size: x-large;
   }
