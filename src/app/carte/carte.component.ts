@@ -43,7 +43,7 @@ export class CarteComponent implements OnInit {
   addPlat(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.platService.addPlat({ name } as Plat).subscribe(plat => {
+    this.platService.addPlat({ name ,prix:999} as Plat).subscribe(plat => {
       this.plats.push(plat);
     });
   }
