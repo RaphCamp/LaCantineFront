@@ -59,6 +59,6 @@ export class MenuComponent implements OnInit {
     this.platService.getPlats().subscribe(plats => this.allPlats = plats);
   }
 
-  newPlat? : Plat;
-
+  //changer les plats du menu
+  newPlat! : Plat;
 }

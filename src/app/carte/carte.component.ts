@@ -48,4 +48,9 @@ export class CarteComponent implements OnInit {
     });
   }
 
+  noFreeFood(plat :Plat){
+    return plat.prix > 0;
+  }
+
+
 }

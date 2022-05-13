@@ -15,17 +15,18 @@ import { CarteComponent } from './carte/carte.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MessagesComponent } from './messages/messages.component';
 import { MenuComponent } from './menu/menu.component';
-
+import { CallbackPipe } from './pipes/callback.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    IdentificationComponent,
+    IdentificationComponent,  
     PlatComponent,
     CarteComponent,
     MessagesComponent,
-    MenuComponent
+    MenuComponent,
+    CallbackPipe
   ],
   imports: [
     BrowserModule,

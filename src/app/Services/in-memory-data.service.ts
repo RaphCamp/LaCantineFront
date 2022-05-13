@@ -9,6 +9,8 @@ import { Menu } from '../models/menu';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const plats: Plat[] = [
+      { id: 0, name: ' ', desc: ' ', photo: " ", prix: 0 },
+      { id: 1, name: 'Frites', desc: 'seulement avec burger', photo: "../../assets/rizotto.jpg", prix: 0},
       { id: 11, name: 'Rizotto', desc: 'très bon très bon', photo: "../../assets/rizotto.jpg", prix: 16},
       { id: 12, name: 'Poulet Roti', desc: 'très bon très bon', photo: "../../assets/rizotto.jpg", prix: 18},
       { id: 13, name: 'Fondant Chocolat', desc: 'très bon très bon', photo: "../../assets/rizotto.jpg", prix: 13},
@@ -21,10 +23,10 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 20, name: 'Escargots qui crient', desc: 'très bon très bon', photo: "../../assets/rizotto.jpg", prix: 20},
     ];
     const menus: Menu[] = [
-      { id: 11, name: 'Ptie Faim Salée',plats : [plats[3],plats[0]], prix: 16},
-      { id: 11, name: 'Ptie Faim Sucrée',plats : [plats[1],plats[2]], prix: 16},
-      { id: 13, name: 'Grosse Fringale',plats : [plats[8],plats[7],plats[6]], prix: 20},
-      { id: 13, name: 'Burger',plats : [plats[5],{ id: 0, name: 'Frites', desc: 'seulement avec burger', photo: "../../assets/rizotto.jpg", prix: 0}], prix: 13},
+      { id: 11, name: 'Ptie Faim Salée',plats : [plats[5],plats[2]], prix: 16},
+      { id: 12, name: 'Ptie Faim Sucrée',plats : [plats[3],plats[4]], prix: 16},
+      { id: 13, name: 'Grosse Fringale',plats : [plats[10],plats[9],plats[8]], prix: 20},
+      { id: 14, name: 'Burger',plats : [plats[7],plats[1]], prix: 13},
     ];
     return { plats,menus };
   }

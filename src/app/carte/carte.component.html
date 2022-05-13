@@ -25,7 +25,7 @@
   <h2>Les Plats</h2>
 
   <div class="boite" class="d-flex flex-row justify-content-center flex-wrap">
-    <div *ngFor="let plat of plats " class="p-2" >
+    <div *ngFor="let plat of plats | callback:noFreeFood" class="p-2" >
         <div class="card bg-light mb-3" class="gallery" >
           <div class="card-header" >
             <a id="platTitle" routerLink="/plat/{{plat.id}}" ><h5>{{plat.name | uppercase}}</h5></a>  <p>({{plat.prix}}€)</p>        
