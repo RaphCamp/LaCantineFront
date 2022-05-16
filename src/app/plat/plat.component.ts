@@ -4,7 +4,6 @@ import { Plat } from '../models/plat';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { PlatService } from '../Services/plat.service';
-import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
