@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MessagesComponent } from './messages/messages.component';
 import { MenuComponent } from './menu/menu.component';
 import { CallbackPipe } from './pipes/callback.pipe';
+import {AutosizeModule} from 'ngx-autosize';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CallbackPipe } from './pipes/callback.pipe';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    AppRoutingModule
+    AppRoutingModule,
+    AutosizeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
