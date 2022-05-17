@@ -9,6 +9,13 @@ h1 {
     margin: auto;
     text-align: center;
 }
+
+h4 {
+    width: auto;
+    margin: auto;
+    text-align: center;
+}
+
 #haut {
     flex-wrap: wrap;
 }
