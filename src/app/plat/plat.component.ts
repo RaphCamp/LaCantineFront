@@ -4,6 +4,8 @@ import { Plat } from '../models/plat';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { PlatService } from '../Services/plat.service';
+import {MatDialog} from '@angular/material/dialog';
+import { BadPriceComponent } from '../dialogs/bad-price/bad-price.component';
 
 
 @Component({
@@ -19,7 +21,8 @@ export class PlatComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private platService: PlatService,
-    private location: Location
+    private location: Location,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -36,16 +39,24 @@ export class PlatComponent implements OnInit {
   }
 
   save(): void {
-    if (!Number(this.plat)) {
-
-    }
-    else if (this.plat) {
-      this.platService.updatePlat(this.plat).subscribe(() => this.goBack());
+    if (this.plat) {
+      if (!Number(this.plat.prix)) {
+        this.dialog.closeAll();
+        this.openDialog();
+      }
+      else {
+        this.platService.updatePlat(this.plat).subscribe(() => this.goBack());
+      }
     }
   }
 
   delete(plat: Plat): void {
     this.platService.deletePlat(plat.id).subscribe(() => this.goBack());
+  }
+
+  //dialog
+  openDialog() {
+    const dialogRef = this.dialog.open(BadPriceComponent);
   }
 
 }

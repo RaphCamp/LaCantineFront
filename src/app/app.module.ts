@@ -17,6 +17,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { MenuComponent } from './menu/menu.component';
 import { CallbackPipe } from './pipes/callback.pipe';
 import {AutosizeModule} from 'ngx-autosize';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BadPriceComponent } from './dialogs/bad-price/bad-price.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import {AutosizeModule} from 'ngx-autosize';
     CarteComponent,
     MessagesComponent,
     MenuComponent,
-    CallbackPipe
+    CallbackPipe,
+    BadPriceComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import {AutosizeModule} from 'ngx-autosize';
       InMemoryDataService, { dataEncapsulation: false }
     ),
     AppRoutingModule,
-    AutosizeModule
+    AutosizeModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

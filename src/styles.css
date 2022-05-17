@@ -8,3 +8,6 @@ body {
 #filtreTransparent {
     background-color: rgb(240, 248, 255,0.7);
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
