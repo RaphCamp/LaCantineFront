@@ -50,6 +50,7 @@ import { BadPriceComponent } from './dialogs/bad-price/bad-price.component';
     MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [BadPriceComponent]
 })
 export class AppModule { }

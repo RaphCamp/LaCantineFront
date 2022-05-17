@@ -4,7 +4,7 @@ import { Plat } from '../models/plat';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { PlatService } from '../Services/plat.service';
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { BadPriceComponent } from '../dialogs/bad-price/bad-price.component';
 
 
@@ -42,6 +42,7 @@ export class PlatComponent implements OnInit {
     if (this.plat) {
       if (!Number(this.plat.prix)) {
         this.dialog.closeAll();
+        window.scroll(0,0);
         this.openDialog();
       }
       else {
@@ -55,8 +56,18 @@ export class PlatComponent implements OnInit {
   }
 
   //dialog
+  config: MatDialogConfig = {
+    hasBackdrop: false,
+    position: {
+        top: '',
+        bottom: '',
+        left: '',
+        right: ''
+    }
+  }
+        
   openDialog() {
-    const dialogRef = this.dialog.open(BadPriceComponent);
+    const dialogRef = this.dialog.open(BadPriceComponent, this.config);
   }
 
 }
