@@ -9,7 +9,7 @@ import { InMemoryDataService } from './Services/in-memory-data.service';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { IdentificationComponent } from './identification/identification.component';
+import { LoginComponent } from './login/login.component';
 import { PlatComponent } from './plat/plat.component';
 import { CarteComponent } from './carte/carte.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,7 +25,7 @@ import { BadPriceComponent } from './dialogs/bad-price/bad-price.component';
   declarations: [
     AppComponent,
     NavigationComponent,
-    IdentificationComponent,  
+    LoginComponent,  
     PlatComponent,
     CarteComponent,
     MessagesComponent,

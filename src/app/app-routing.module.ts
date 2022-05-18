@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PlatComponent } from './plat/plat.component';
 import { MenuComponent } from './menu/menu.component';
 import { CarteComponent } from './carte/carte.component';
-import { IdentificationComponent } from './identification/identification.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'plat/:id', component: PlatComponent }, 
   { path: 'menu/:id', component: MenuComponent },
   { path: 'carte', component: CarteComponent },
-  { path: 'identification', component: IdentificationComponent }
+  { path: 'identification', component: LoginComponent }
 ];
 
 
