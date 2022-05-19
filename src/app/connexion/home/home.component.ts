@@ -3,7 +3,7 @@ import { UserService } from '../../Services/user.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css','../../../../node_modules/bootstrap/dist/css/bootstrap.css']
 })
 export class HomeComponent implements OnInit {
   content?: string;

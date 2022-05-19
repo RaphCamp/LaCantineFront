@@ -3,7 +3,7 @@ import { AuthService } from '../../Services/auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css','../../../../node_modules/bootstrap/dist/css/bootstrap.css']
 })
 export class RegisterComponent implements OnInit {
   form: any = {
